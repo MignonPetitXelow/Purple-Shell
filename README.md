@@ -14,7 +14,7 @@ git clone https://github.com/MignonPetitXelow/Purple-Shell
 ```
 cd PurpleShell
 ```
-#### 3. and run theses commandes: 
+#### 3. and run this command: 
 ```bash
 $ sudo make install
 ```
