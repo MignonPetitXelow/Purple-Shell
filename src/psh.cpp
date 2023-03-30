@@ -8,7 +8,7 @@ int main()
 {
     while(true)
     {
-        std::cout << std::endl << "● " << std::getenv("USER") << "→ ";
+        std::cout << std::endl << "\033[0;2;35m● " << std::getenv("USER") << "\033[0;2;34m→\033[0;2;0m ";
         char command[1024];
         std::cin.getline(command, 1024);
 

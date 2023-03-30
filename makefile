@@ -9,7 +9,7 @@ NAME = PurpleShell
 
 PACKAGES_NEEDED = build_essential
 
-all: $(NAME)
+all: $(NAME) 
 
 $(NAME): $(OBJ)
 	$(CCL) -o $(NAME) $(OBJ)
@@ -28,7 +28,7 @@ commit:
 
 install:
 	rm -f ~/$(NAME)
-	cp $(NAME) ~/$(NAME)
+	mv ./$(NAME) ~/$(NAME)
 
 packages:
 	apt-get install $(PACKAGES_NEEDED)

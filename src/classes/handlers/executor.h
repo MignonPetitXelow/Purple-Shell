@@ -10,6 +10,8 @@
 #include <string>
 #include <cstring>
 
+#include "../../psh.h"
+
 
 class executor
 {   

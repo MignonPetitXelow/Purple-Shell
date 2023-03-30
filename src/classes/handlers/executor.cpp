@@ -2,8 +2,6 @@
 
 executor::executor() {} 
 
-std::string SHELL_PATH = "~/PurpleShell";
-
 int executor::prog_execution(std::vector<char*> args, char command[1024], char* prog, char* temp)
 {
     char** arg_v = new char*[args.size()+1];
@@ -19,13 +17,13 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
     {
         std::cout << "● 📦  restarting Shell..." << std::endl;
         std::cout << "● 🦖  please wait..." << std::endl;
-        execvp(SHELL_PATH.c_str(), arg_v);
+        execvp(std::strcat(std::getenv("HOME"), "/PurpleShell"), arg_v);
         perror(command);
         return 68;
     }
     else if(strcmp(command, "neofetch") == 0)
     {
-        std::cout << "● 🪸  neofetch is unavaible on Purple Shell for the time." << std::endl;
+        std::cout << " ● 🪸  neofetch is unavailable on Purple Shell for the time." << std::endl;
         return 0;
     }
     else

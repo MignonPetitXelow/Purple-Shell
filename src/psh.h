@@ -3,10 +3,10 @@
 
 #include "classes/handlers/executor.h"
 
-#include <unistd.h>     // getpid(), getcwd()
-#include <sys/types.h>  // type definitions, e.g., pid_t
-#include <sys/wait.h>   // wait()
-#include <signal.h>     // signal name constants and kill()
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <signal.h>
 #include <iostream>
 #include <vector>
 #include <string>
