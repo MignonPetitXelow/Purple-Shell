@@ -1,10 +1,10 @@
 # Purple Shell
 
-## Introduction:
+## Introduction :
 
 🦖 Purple Shell is a reloaded version of my (trash) project **MignonPetitXelow/YSHCPP**
 
-## Instalation
+## Instalation :
 
 #### first clone the git repo `git clone https://github.com/MignonPetitXelow/Purple-Shell`
 #### after go in the repo folder `cd PurpleShell`
