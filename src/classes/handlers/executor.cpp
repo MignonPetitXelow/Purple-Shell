@@ -34,7 +34,7 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
                 chdir ("/");
             else
                 chdir (arg_v[1]);
-            perror (command);
+            perror(command);
         }
         else
         {
@@ -48,7 +48,6 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
             else if(kidpid == 0)
             {
                 execvp(prog, arg_v);
-                perror(command);
                 return -1;
             }
             else

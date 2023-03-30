@@ -7,7 +7,7 @@ CCL = g++
 
 NAME = PurpleShell
 
-PACKAGES_NEEDED = build_essential
+PACKAGES_NEEDED = build-essential
 
 all: $(NAME) 
 
@@ -26,12 +26,12 @@ commit:
 	git add .
 	git commit -a
 
-install:
-	rm -f ~/$(NAME)
-	mv ./$(NAME) ~/$(NAME)
-
 packages:
 	apt-get install $(PACKAGES_NEEDED)
 
 run: re 
 	./$(NAME)
+
+install: packages re
+	rm -f ~/$(NAME)
+	mv ./$(NAME) ~/$(NAME)

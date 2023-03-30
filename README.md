@@ -2,20 +2,28 @@
 
 ## Introduction :
 
-🦖 Purple Shell is a reloaded version of my (trash) project **MignonPetitXelow/YSHCPP**
+#### 🦖 Purple Shell is a reloaded version of my (trash) project **MignonPetitXelow/YSHCPP**
 
 ## Instalation :
 
-#### first clone the git repo `git clone https://github.com/MignonPetitXelow/Purple-Shell`
-#### after go in the repo folder `cd PurpleShell`
-#### and run theses commandes: 
-```bash
-sudo make packages
-make re
-make install
+#### 1. first clone the git repo 
 ```
-#### after that just run the following command `~/PurpleShell`
-##  shell codes :
+git clone https://github.com/MignonPetitXelow/Purple-Shell
+```
+#### 2. after go in the repo folder 
+```
+cd PurpleShell
+```
+#### 3. and run theses commandes: 
+```bash
+$ sudo make install
+```
+#### 4. after that just run the following command 
+```
+~/PurpleShell
+```
+᲼᲼
+## Shell codes :
 -------------------
 ```h
 68  = "PROGRAM FINISHED HIS TASK";
