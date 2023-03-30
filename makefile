@@ -22,7 +22,7 @@ fclean: clean
 
 re: fclean all
 
-commit:
+commit: clean
 	git add .
 	git commit -a
 
