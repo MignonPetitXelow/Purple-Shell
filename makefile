@@ -7,6 +7,8 @@ CCL = g++
 
 NAME = PurpleShell
 
+PACKAGES_NEEDED = build_essential
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -23,6 +25,13 @@ re: fclean all
 commit:
 	git add .
 	git commit -a
+
+install:
+	rm -f ~/$(NAME)
+	cp $(NAME) ~/$(NAME)
+
+packages:
+	apt-get install $(PACKAGES_NEEDED)
 
 run: re 
 	./$(NAME)

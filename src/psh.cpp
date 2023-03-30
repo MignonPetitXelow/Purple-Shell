@@ -2,22 +2,30 @@
 
 psh::psh(){}
 
-handlers handler;
+executor exec;
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
-    std::string arg_v;
-
     while(true)
     {
-        std::cout << "● " << std::getenv("USER") << "→ ";
-        std::cin >> arg_v;
-        int operationResult = handler.listen(false, 5, arg_v);
-        if(operationResult > 0)
-        std::cout << "Operation failed with error code " << operationResult << std::endl;
+        std::cout << std::endl << "● " << std::getenv("USER") << "→ ";
+        char command[1024];
+        std::cin.getline(command, 1024);
+
+        std::vector<char*> args;
+        char* prog = strtok(command, " ");
+        char* temp = prog;
+
+        while(temp != NULL)
+        {
+            args.push_back(temp);
+            temp = strtok(NULL, " ");
+        }
+
+        int processResult = exec.prog_execution(args, command, prog, temp);
+        if(processResult == 68)
+            return 0;
     }
 
-    //cc
     return 0;
 }

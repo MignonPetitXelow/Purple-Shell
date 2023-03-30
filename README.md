@@ -6,12 +6,22 @@
 
 >> Instalation
 
-⛈️ Idk bro..
+first clone the git repo `git clone https://github.com/MignonPetitXelow/PurpleShell`
+after go in the repo folder `cd PurpleShell`
+and run theses commandes: 
+```bash
+sudo make packages
+make re
+make install
+```
 
->> Errores codes :
+after that just run the following command `~/PurpleShell`
+
+>>  shell codes :
 -------------------
 ```h
+68  = "PROGRAM FINISHED HIS TASK";
 221 = "HANDLERS FAILURE";
 343 = "NO ARGS";
-465 = "POPEN FAILURE (VAR IS NULL)";
+465 = "POPEN FAILURE";
 ```
