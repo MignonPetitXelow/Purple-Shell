@@ -23,7 +23,7 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
     }
     else if(strcmp(command, "neofetch") == 0)
     {
-        std::cout << " ● 🪸  neofetch is unavailable on Purple Shell for the time." << std::endl;
+        std::cout << " ● 🪸  neofetch is unavailable on Purple Shell for the moment." << std::endl;
         return 0;
     }
     else
