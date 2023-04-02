@@ -33,5 +33,5 @@ run: re
 	./$(NAME)
 
 install: packages re
-	rm -f ~/$(NAME)
-	mv ./$(NAME) ~/$(NAME)
+	rm -f /bin/$(NAME)
+	mv ./$(NAME) /bin/$(NAME)

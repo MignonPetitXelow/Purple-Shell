@@ -20,7 +20,7 @@ $ sudo make install
 ```
 #### 4. after that just run the following command 
 ```
-~/PurpleShell
+PurpleShell
 ```
 ᲼᲼
 ## Shell codes :

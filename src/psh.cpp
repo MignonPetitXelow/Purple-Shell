@@ -16,13 +16,19 @@ int main()
     while(true)
     {
         // Display the prompt for the user to enter a command
-        std::cout << std::endl << "\033[0;2;35m● " << std::getenv("USER") << "\033[0;2;34m→\033[0;2;0m ";
+        std::cout << std::endl << PURPLE_FOREGROUND << "○ " << std::getenv("USER") << BLUE_FOREGROUND << "→" << RESET <<" ";
 
         // Read the user input
         char command[1024];
         std::cin.getline(command, 1024);
 
-        // Create a vector to store args and extract the fist argument of the command
+        // Check for EOF (Ctrl+D)
+        if(std::cin.eof())
+        {
+            std::cout << std::endl << GREEN_FOREGROUND << "● " << RESET << "seeya later!" << std::endl;
+            return 0;
+        }
+        // Create a vector to store arguments and extract the first argument of the command
         std::vector<char*> args;
         char* prog = strtok(command, " ");
         char* temp = prog;
@@ -30,12 +36,12 @@ int main()
         // Loop to extract the following arguments of the command
         while(temp != NULL)
         {
-            // Add the argument to the list of args
+            // Add the argument to the list of arguments
             args.push_back(temp);
             temp = strtok(NULL, " ");
         }
         
-        // Execute the commands with the args
+        // Execute the commands with the arguments
         int processResult = exec.prog_execution(args, command, prog, temp);
 
         // Exit
