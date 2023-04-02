@@ -19,8 +19,10 @@ int main()
         std::cout << std::endl << PURPLE_FOREGROUND << "○ " << std::getenv("USER") << BLUE_FOREGROUND << "→" << RESET <<" ";
 
         // Read the user input
-        char command[1024];
-        std::cin.getline(command, 1024);
+        char *command = NULL;
+        size_t size = 0;
+        size_t len = getline(&command, &size, stdin);
+        command[len - 1] = '\0';
 
         // Check for EOF (Ctrl+D)
         if(std::cin.eof())
