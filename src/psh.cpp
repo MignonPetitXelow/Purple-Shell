@@ -25,12 +25,12 @@ int main()
         command[len - 1] = '\0';
 
         // Check for EOF (Ctrl+D)
-        /*if(EOF)
+        if(feof(stdin))
         {
             std::cout << std::endl << GREEN_FOREGROUND << "● " << RESET << "seeya later!" << std::endl;
             exit(0);
-        }*/
-        
+        }
+
         // Create a vector to store arguments and extract the first argument of the command
         std::vector<char*> args;
         char* prog = strtok(command, " ");
