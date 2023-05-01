@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include "../commands/femfetch.h"
 
 #include "../../psh.h"
 
@@ -17,7 +18,7 @@ class executor
 {   
     public:
         executor();
-        int prog_execution(std::vector<char*> args, char command[1024], char* prog, char* temp);
+        int prog_execution(std::vector<char*> args, char *command, char* prog, char* temp);
 };
 
 #endif

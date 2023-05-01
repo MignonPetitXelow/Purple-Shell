@@ -22,12 +22,3 @@ $ sudo make install
 ```
 PurpleShell
 ```
-᲼᲼
-## Shell codes :
--------------------
-```h
-68  = "PROGRAM FINISHED HIS TASK";
-221 = "HANDLERS FAILURE";
-343 = "NO ARGS";
-465 = "POPEN FAILURE";
-```

@@ -11,10 +11,19 @@ psh::psh(){}
 
 executor exec;
 
+void signalHandler(int signum) 
+{
+    // Ignoring ctrl+c and ctrl+z signal
+
+}
+
 int main()
 {
     while(true)
     {
+        signal(SIGINT, signalHandler);
+        signal(SIGTSTP, signalHandler);
+
         // Display the prompt for the user to enter a command
         std::cout << std::endl << PURPLE_FOREGROUND << "○ " << std::getenv("USER") << BLUE_FOREGROUND << "→" << RESET <<" ";
 
@@ -22,6 +31,13 @@ int main()
         char *command = NULL;
         size_t size = 0;
         size_t len = getline(&command, &size, stdin);
+
+        // Check if the user input is empty
+        if(len <= 1 || command[0] == '\n')
+        {
+            // If the user input is empty, then prompt again for input
+            continue;
+        }
         command[len - 1] = '\0';
 
         // Check for EOF (Ctrl+D)

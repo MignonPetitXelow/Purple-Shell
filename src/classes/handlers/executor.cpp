@@ -10,7 +10,7 @@
 // Def of the constructor for the "executor.cpp" class
 executor::executor() {} 
 
-int executor::prog_execution(std::vector<char*> args, char command[1024], char* prog, char* temp)
+int executor::prog_execution(std::vector<char*> args, char *command, char* prog, char* temp)
 {
     // Allocate memory for the char array holding the command args and copy args from the vector to the char array
     char** arg_v = new char*[args.size()+1];
@@ -29,27 +29,28 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
         std::cout << "● 🦖  please wait..." << std::endl;
 
         // Concatenate the HOME directory path with the "PurpleShell" binary filename to get the full path to the binary and exec program
-        execvp(std::strcat(std::getenv("HOME"), "/PurpleShell"), arg_v);
+        execvp("/bin/PurpleShell", arg_v);
         perror(command);
 
         exit(0);
     }
     else if(strcmp(command, "neofetch") == 0)
     {
-        std::cout << RED_FOREGROUND << "● " << RESET << "🪸  neofetch is unavailable on Purple Shell for the moment." << std::endl;
+        femfetch femfetch;
+        femfetch.fetch();
         return 0;
     }
     else
     {
-        if (!strcmp (prog, "cd"))
+        if(strcmp(prog, "cd") == 0) 
         {
             // If there is no arg after "cd", change the working directory to the root directory
             if (arg_v[1] == NULL)
-                chdir ("/");
+                chdir("/");
 
             // Otherwise, change the working directory to the specified directory
             else
-                chdir (arg_v[1]);
+                chdir(arg_v[1]);
             perror(command);
         }
         else
@@ -64,7 +65,12 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
             else if(kidpid == 0)
             {
                 execvp(prog, arg_v);
-                return -1;
+                if(errno != 0)
+                {
+                    std::string err = ""; err += RED_FOREGROUND; err += "× "; err += command;
+                    perror(err.c_str());
+                    exit(0);
+                }
             }
             else
             {
@@ -78,3 +84,4 @@ int executor::prog_execution(std::vector<char*> args, char command[1024], char* 
     }
     return 0;
 }
+
